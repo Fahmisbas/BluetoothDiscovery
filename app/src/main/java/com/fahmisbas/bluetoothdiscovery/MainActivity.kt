@@ -10,15 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var tvBluetoothState: TextView
-    private lateinit var listViewBluetooth: ListView
-    private lateinit var btnSearch: Button
 
     private lateinit var bluetoothAdapter: BluetoothAdapter
     private var bluetoothDevices: ArrayList<String> = ArrayList()
@@ -34,8 +29,7 @@ class MainActivity : AppCompatActivity() {
                 tvBluetoothState.text = "Finished"
                 btnSearch.isEnabled = true
             } else if (BluetoothDevice.ACTION_FOUND == action) {
-                val device: BluetoothDevice =
-                    intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)!!
+                val device: BluetoothDevice = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE)!!
                 val name = device.name
                 val address = device.address
                 val rssi: String =
@@ -60,10 +54,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        tvBluetoothState = findViewById(R.id.tv_btState)
-        listViewBluetooth = findViewById(R.id.list_bt)
-        btnSearch = findViewById(R.id.btn_search)
 
         listViewBluetooth.adapter = adapter
 

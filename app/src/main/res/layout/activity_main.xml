@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_search"
+        android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -17,18 +17,18 @@
         android:layout_marginBottom="25dp"/>
 
     <TextView
-        android:id="@+id/tv_btState"
+        android:id="@+id/tvBluetoothState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/btn_search"
+        android:layout_above="@id/btnSearch"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/black"
         android:layout_marginBottom="10dp"/>
 
     <ListView
-        android:id="@+id/list_bt"
+        android:id="@+id/listViewBluetooth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_btState"/>
+        android:layout_above="@id/tvBluetoothState"/>
 
 </RelativeLayout>
